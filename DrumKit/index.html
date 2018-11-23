@@ -61,10 +61,10 @@
 
   <script>
       playSound = (e) => {
-        let correspondingElements = document.querySelectorAll(`[data-key='${e.keyCode}']`);
+        const correspondingElements = document.querySelectorAll(`[data-key='${e.keyCode}']`);
         if(correspondingElements.length !== 0){
-            let div = correspondingElements[0];
-            let audio = correspondingElements[1];
+            const div = correspondingElements[0];
+            const audio = correspondingElements[1];
             div.classList.add('playing');
             audio.currentTime = 0;
             audio.play();
@@ -76,7 +76,7 @@
           }
       }
 
-      let allElementsWithClassKey = document.querySelectorAll('.key');
+      const allElementsWithClassKey = document.querySelectorAll('.key');
       allElementsWithClassKey.forEach(element => {
           element.addEventListener('transitionend', transitionEnd);
       })
